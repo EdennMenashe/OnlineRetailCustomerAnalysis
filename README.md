@@ -4,38 +4,38 @@
 
 ## **Project Description**
 
-This project analyzes customer purchases from an online retail store to understand **customer behavior**, **key metrics**, and to generate actionable business insights.
-The dataset includes information on purchases, products, quantity, price, invoices, and country.
+This project analyzes customer purchases from an online retail store with the goal of understanding **customer behavior**, **key metrics**, and generating business insights.
+The dataset includes information on purchases, products, quantities, prices, invoices, and countries.
 
 ---
 
-## **Project Workflow**
+## **Project Steps**
 
-### **Step 1 – Data Loading**
+### **Step 1 – Load Data**
 
-* Upload the CSV file containing all purchases.
-* Perform initial checks for missing data, column types, and dataset size.
+* Upload a CSV file containing all purchases.
+* Initial inspection of missing data, column types, and number of rows.
 
 ### **Step 2 – Data Cleaning**
 
 * Remove rows with missing `CustomerID` or `Description`.
-* Remove rows with negative or zero `Quantity` or `UnitPrice`.
-* Convert the `InvoiceDate` column to datetime format.
-* Create new columns for `Year` and `Month`.
+* Remove rows with `Quantity` or `UnitPrice` less than or equal to 0.
+* Convert `InvoiceDate` to datetime format.
+* Create `Year` and `Month` columns.
 
-### **Step 3 – Metrics Calculation**
+### **Step 3 – Calculate Metrics**
 
 Key metrics per customer:
 
-| Metric                 | Description                                          |
-| ---------------------- | ---------------------------------------------------- |
-| TotalPrice             | Total money for each purchase (Quantity * UnitPrice) |
-| TotalSpent             | Total spending per customer                          |
-| TotalQuantity          | Total products purchased by the customer             |
-| NumInvoices            | Number of unique invoices per customer               |
-| AvgQuantityPerInvoice  | Average quantity per invoice for the customer        |
-| AvgProductsPerPurchase | Average quantity of products per purchase (Invoice)  |
-| AvgPurchase            | Average purchase amount per customer                 |
+| Metric                 | Description                                           |
+| ---------------------- | ----------------------------------------------------- |
+| TotalPrice             | Total money spent per purchase (Quantity * UnitPrice) |
+| TotalSpent             | Total spending per customer (sum of TotalPrice)       |
+| TotalQuantity          | Total number of products purchased by the customer    |
+| NumInvoices            | Number of unique invoices per customer                |
+| AvgQuantityPerInvoice  | Average quantity of products per invoice              |
+| AvgProductsPerPurchase | Average quantity of products per purchase             |
+| AvgPurchase            | Average purchase amount per customer                  |
 
 Metrics by country:
 
@@ -44,7 +44,7 @@ Metrics by country:
 | TotalSpentByCountry      | Total revenue per country              |
 | UniqueCustomersByCountry | Number of unique customers per country |
 
-Metrics by time:
+Metrics over time:
 
 | Metric                | Description                        |
 | --------------------- | ---------------------------------- |
@@ -55,49 +55,50 @@ Metrics by time:
 
 ### **Step 4 – Customer Profile**
 
-* A `CustomerProfile` DataFrame is created with all metrics per customer.
-* This allows comparing customers by total spending, product quantity, and averages.
+* A `CustomerProfile` DataFrame was created with all metrics for each customer.
+* Enables comparison between customers based on purchases, product quantities, and averages.
 
 ---
 
-### **Step 5 – Graphs and Dashboards**
+### **Step 5 – Graphs & Dashboards**
 
-The following visualizations were created:
+| Graph                                         | Description                                                                         |
+| --------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Top 10 Customers by Total Purchases           | Shows the top 10 customers who spent the most in total.                             |
+| Top 10 Customers by Total Quantity            | Shows the top 10 customers who purchased the most products overall.                 |
+| Top 10 Customers by Number of Invoices        | Shows the top 10 customers with the highest number of unique invoices.              |
+| Top 10 Countries by Unique Customers          | Shows the 10 countries with the highest number of unique customers.                 |
+| Monthly Sales by Year                         | Displays total purchases per month, separated by year, to identify seasonal trends. |
+| Number of Purchases per Month                 | Shows the number of purchases (invoices) for each month.                            |
+| Top 10 Countries by Revenue                   | Shows the top 10 countries generating the most revenue.                             |
+| Distribution of Total Purchases per Customer  | Histogram showing the distribution of total purchases across customers.             |
+| Distribution of Average Quantity per Customer | Histogram showing the distribution of average products per customer.                |
 
-1. Top 10 Customers by TotalPrice
-2. Top 10 Customers by TotalQuantity
-3. Top 10 Customers by NumInvoices
-4. Top 10 Countries by Unique Customers
-5. Monthly Sales by Year
-6. Number of Purchases per Month
-7. Top 10 Countries by Revenue
-8. Distribution of Total Purchases per Customer (Histogram)
-9. Distribution of Average Quantity per Customer (Histogram)
-
-*All graphs are in English, with Hebrew comments in the code for explanations.*
+*All graphs are in English, with Hebrew comments in the code for explanation.*
 
 ---
 
-### **Key Insights**
+### **Insights**
 
-1. **High-spending customers:** Some customers spend a very high amount with few purchases (premium customers).
-2. **Top countries:** The UK generates the highest revenue and has the most customers. Countries like Netherlands generate high revenue with fewer customers, and Germany has many customers but lower revenue. Marketing strategies can be adapted accordingly.
-3. **Strong months:** October and November are the strongest months in sales, while other months are measured for only one year. December appears twice, so it seems higher but not necessarily accurate. These months may coincide with holiday seasons and are suitable for seasonal campaigns.
-4. **Customer purchase patterns:** Some customers make fewer purchases but buy a large number of products per purchase (e.g., Customer 14606), leading to high spending. Other customers with many invoices (e.g., Customer 12748) purchase fewer items per invoice and are not in the top 10 by total items or spending.
-5. **Diverse purchasing behavior:** Average quantity per purchase and average spending per customer indicate varied customer tendencies.
+1. Some customers spend very high amounts, although their number of purchases may be low (premium customers).
+2. The UK generates the highest revenue and has the largest number of customers.
+3. Other countries like the Netherlands generate significant revenue but are not in the top 10 by number of customers, and Germany, which has the second-highest number of customers, ranks fourth in revenue.
+4. Certain months (October and November) show higher sales, while December appears high because it was recorded twice. Most other months only have data from one year.
+5. Customers vary in their purchase behavior: some buy fewer invoices but many products (e.g., Customer 14606, who also spent the most), while others buy many invoices but fewer products (e.g., Customer 12748), and these are not in the top 10 by total items or spending.
 
 ---
 
 ### **Business Recommendations**
 
-1. **High-spending customers:** Offer personalized deals or loyalty programs.
-2. **Top-performing countries:** Invest in marketing and fast shipping in high-revenue countries. Learn from Netherlands’ strategy for better targeting.
-3. **Customers with few but large purchases:** Analyze customers who buy many products per purchase and provide bundles, upsell opportunities, or premium products.
-4. **Customer retention:** Analyzing average purchases and product quantities helps identify high-potential repeat customers and optimize retention strategies.
+1. **High-spending customers:** Offer tailored promotions or loyalty programs.
+2. **Leading countries:** Invest in marketing and faster delivery in these regions (UK, Germany, Netherlands).
+3. **Seasonal trends:** Align promotional campaigns with high-sales months (October and November).
+4. **Customer behavior analysis:** Identify which products are purchased by high-average customers and consider bundles or upsell opportunities.
+5. **Customer retention:** Analyze average purchase amounts and product quantities to identify high-potential returning customers.
 
 ---
 
-### **Tools and Technologies**
+### **Tools & Technologies**
 
 * Python (Pandas, Matplotlib, Seaborn)
 * Google Colab
@@ -106,10 +107,9 @@ The following visualizations were created:
 
 ### **Project Files**
 
-* `OnlineRetail.csv` – raw dataset
-* Python code for data cleaning, analysis, and graph generation
+* `OnlineRetail.csv` – Raw dataset
+* Python code for data cleaning, analysis, and graph creation
 
 ---
 
-
-Do you want me to do that?
+רוצה שאעשה זאת?
