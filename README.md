@@ -14,7 +14,7 @@ Online-Retail-Analysis/
 │   └── OnlineRetail.xlsx          # Raw dataset
 │
 ├── code/
-│   └── OnlineRetailanalysis.py       # Python analysis script
+│   └── OnlineRetailAnalysis.py       # Python analysis script
 │
 └── README.md
 ```
