@@ -14,7 +14,7 @@ Online-Retail-Analysis/
 │   └── OnlineRetail.xlsx          # Raw dataset
 │
 ├── code/
-│   └── OnlineRetailAnalysis.py       # Python analysis script
+│   └── 	OnlineRetailAnalsis.ipynb       # Python analysis script
 │
 └── README.md
 ```
@@ -88,4 +88,4 @@ All charts are in English, with explanatory Hebrew comments in the code.
 
 ## Included Files
 - `OnlineRetail.xlsx` – raw dataset  
-- `customer_analysis.py` – full analysis script  
+- `	OnlineRetailAnalsis.ipynb` – full analysis script  
