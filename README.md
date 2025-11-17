@@ -10,8 +10,6 @@ The goal is to identify top customers, understand country-level revenue patterns
 The dataset used in this project was obtained from Kaggle:  
 [Online Retail Dataset – Kaggle](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)
 
-The dataset contains one year of transactional data including invoices, products, quantities, prices, and customer IDs.
-
 ---
 
 ## Project Structure
@@ -63,14 +61,12 @@ Visualizations were created using Matplotlib and Seaborn, including:
 - Distribution of customer spending  
 - Distribution of quantities per invoice  
 
-Charts are in English, with explanatory Hebrew comments in the code.
-
 ---
 
 ## Key Insights
 - The United Kingdom is the largest and most profitable market  
 - Some countries show high revenue despite having fewer customers (e.g., Netherlands)  
-- Sales peak in October–November, indicating strong seasonal demand  
+- Sales peak in October–November, indicating seasonal demand  
 - Customers exhibit highly diverse purchasing behavior  
 
 ---
@@ -86,8 +82,8 @@ Charts are in English, with explanatory Hebrew comments in the code.
 
 ## Technologies Used
 - **Python:** Pandas, Matplotlib, Seaborn  
-- **Environment:** Google Colab / Jupyter Notebook  
-- **Source:** Kaggle Online Retail Dataset  
+- **Google Colab (Jupyter Notebook environment)**  
+- **Data Source:** Kaggle Online Retail Dataset  
 
 ---
 
