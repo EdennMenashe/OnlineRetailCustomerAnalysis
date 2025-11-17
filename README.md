@@ -6,15 +6,20 @@ The goal is to identify top customers, understand country-level revenue patterns
 
 ---
 
+## Dataset Source
+The dataset used in this project was obtained from Kaggle:  
+[Online Retail Dataset – Kaggle](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)
+
+The dataset contains one year of transactional data including invoices, products, quantities, prices, and customer IDs.
+
+---
+
 ## Project Structure
 ```
 Online-Retail-Analysis/
 │
-├── data/
-│   └── OnlineRetail.xlsx          # Raw dataset
-│
 ├── code/
-│   └── 	OnlineRetailAnalsis.ipynb       # Python analysis script
+│   └── OnlineRetailAnalysis.ipynb     # Python analysis notebook
 │
 └── README.md
 ```
@@ -22,70 +27,69 @@ Online-Retail-Analysis/
 ---
 
 ## Data Cleaning
-- Removed rows with missing `CustomerID` or `Description`.
-- Filtered out negative or zero quantities and prices.
-- Converted `InvoiceDate` to datetime.
-- Created `Year` and `Month` columns for time-series analysis.
+- Removed rows with missing `CustomerID` or `Description`  
+- Filtered out negative or zero quantities and prices  
+- Converted `InvoiceDate` to datetime format  
+- Created `Year` and `Month` columns for time-series analysis  
 
 ---
 
 ## Features and Metrics
 A customer-level dataset (**CustomerProfile**) was created with the following metrics:
 
-- TotalSpent – total amount spent by each customer  
-- TotalQuantity – total quantity of products purchased  
-- NumInvoices – number of unique purchase invoices  
-- AvgQuantityPerInvoice  
-- AvgPurchaseAmount
+- **TotalSpent** – total amount spent by each customer  
+- **TotalQuantity** – total quantity of items purchased  
+- **NumInvoices** – number of unique purchase invoices  
+- **AvgQuantityPerInvoice**  
+- **AvgPurchaseAmount**
 
 Additional analyses include:
 
 - Revenue by country  
 - Unique customers by country  
-- Monthly sales analysis  
-- Top 10 customers by spending, quantity, and invoices  
-- Distribution charts for spending and quantities  
+- Monthly sales trends  
+- Top 10 customers by spending, quantity, and number of invoices  
+- Distribution of spending and quantities  
 
 ---
 
 ## Visualizations
-The project includes several visualizations created with Matplotlib and Seaborn:
+Visualizations were created using Matplotlib and Seaborn, including:
 
-- Top 10 customers by total spending  
-- Top 10 customers by total quantity  
+- Top 10 customers by spending  
+- Top 10 customers by quantity  
 - Revenue by country  
-- Monthly sales trends  
+- Monthly revenue trends  
 - Distribution of customer spending  
-- Distribution of average quantities  
+- Distribution of quantities per invoice  
 
-All charts are in English, with explanatory Hebrew comments in the code.
+Charts are in English, with explanatory Hebrew comments in the code.
 
 ---
 
 ## Key Insights
-- The UK is the largest and most profitable market.  
-- Some countries generate high revenue despite having fewer customers (e.g., Netherlands).  
-- Seasonal demand peaks in October–November.  
-- Customer behavior varies significantly: some customers spend a lot in few purchases, others buy many invoices with lower quantities.
+- The United Kingdom is the largest and most profitable market  
+- Some countries show high revenue despite having fewer customers (e.g., Netherlands)  
+- Sales peak in October–November, indicating strong seasonal demand  
+- Customers exhibit highly diverse purchasing behavior  
 
 ---
 
 ## Business Recommendations
-- Create tailored loyalty offers for high-spending customers.  
-- Strengthen marketing activities in the UK, Germany, and the Netherlands.  
-- Run campaigns aligned with peak sales months.  
-- Develop product bundles for customers who purchase large quantities.  
-- Identify and retain high-value returning customers.
+- Offer loyalty incentives to high-spending customers  
+- Strengthen marketing efforts in the UK, Germany, and the Netherlands  
+- Align promotions with seasonal sales peaks  
+- Create product bundles for large-quantity purchasers  
+- Identify and retain high-value, returning customers  
 
 ---
 
 ## Technologies Used
-- Python: Pandas, Matplotlib, Seaborn  
-- Excel (raw dataset)  
-- Google Colab / Jupyter Notebook
+- **Python:** Pandas, Matplotlib, Seaborn  
+- **Environment:** Google Colab / Jupyter Notebook  
+- **Source:** Kaggle Online Retail Dataset  
 
 ---
 
 ## Included Files
-- `OnlineRetail.xlsx` – raw dataset  
-- `	OnlineRetailAnalsis.ipynb` – full analysis script  
+- `OnlineRetailAnalysis.ipynb` – full data analysis notebook
